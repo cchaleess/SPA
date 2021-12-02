@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class UsuarioService {
+class UserService {
 
    getUserList = async (accessToken, apiEndpoint) => {
        
@@ -52,4 +52,4 @@ class UsuarioService {
       };
   } 
  
-export default UsuarioService;
+export default UserService;

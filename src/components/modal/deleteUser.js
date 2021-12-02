@@ -1,9 +1,8 @@
-import React, { useState ,Fragment } from "react";
+import React, { Fragment } from "react";
 import { Modal, ModalBody, ModalFooter } from "reactstrap";
-import UsuarioService from "../../services/UsuarioService";
-import {protectedResources} from "../../authConfig";
 
-function DeleteUserModal({DeleteUserFunction, modalOnOffDeleteUserFunction, OpenModalUserDelete,name }) {
+
+function DeleteUserModal({DeleteUserFunction, showModalDeleteUserFunction, OpenModalUserDelete,name }) {
     return (
     <Fragment>
         <Modal isOpen={OpenModalUserDelete }>
@@ -12,7 +11,7 @@ function DeleteUserModal({DeleteUserFunction, modalOnOffDeleteUserFunction, Open
             </ModalBody>
             <ModalFooter>
                 <button className="btn btn-danger"  onClick={() => DeleteUserFunction ()} >Si</button>
-                <button className="btn btn-secundary" onClick={()=> modalOnOffDeleteUserFunction()}>No</button>
+                <button className="btn btn-secundary" onClick={()=> showModalDeleteUserFunction()}>No</button>
             </ModalFooter>
         </Modal>
     </Fragment>

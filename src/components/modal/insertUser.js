@@ -1,9 +1,8 @@
 import React, {Fragment, useState} from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import UsuarioService from "../../services/UsuarioService";
-import {protectedResources} from "../../authConfig";
 
-function InsertUserModal({modalOnOffInsertUserFunction ,OpenModalUserInsert, handleChange, InsertUser}){
+
+function InsertUserModal({showModalInsertUserFunction ,OpenModalUserInsert, handleChange, InsertUser}){
 
    return (
     <Fragment>
@@ -32,7 +31,7 @@ function InsertUserModal({modalOnOffInsertUserFunction ,OpenModalUserInsert, han
           </ModalBody>
           <ModalFooter>
             <button className="btn btn-primary" onClick = {()=> InsertUser()}>Insertar</button>
-            <button className="btn btn-danger" onClick = {()=> modalOnOffInsertUserFunction()}>Cancelar</button>
+            <button className="btn btn-danger" onClick = {()=> showModalInsertUserFunction()}>Cancelar</button>
           </ModalFooter>
         </Modal>
     </Fragment>

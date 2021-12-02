@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MsalAuthenticationTemplate, useMsal, useAccount } from "@azure/msal-react";
 import { InteractionRequiredAuthError, InteractionType } from "@azure/msal-browser";
 import { loginRequest, protectedResources } from "../authConfig";
-import UsuarioService from "../services/UsuarioService";
+import UserService from "../services/UserService";
 
 const ProfileContent = () => {
    
@@ -17,7 +17,7 @@ const ProfileContent = () => {
                 account: account
             }).then((response) => {   
                 console.log(response.accessToken); 
-                new UsuarioService().getUserList(response.accessToken,protectedResources.graphMe.endpoint )
+                new UserService().getUserList(response.accessToken,protectedResources.graphMe.endpoint )
                     .then(response =>setGraphData(response));
             }).catch((error) => {
                 // in case if silent token acquisition fails, fallback to an interactive method
@@ -26,7 +26,7 @@ const ProfileContent = () => {
                         instance.acquireTokenPopup({
                             scopes: protectedResources.graphMe.scopes,
                         }).then((response) => {
-                        new UsuarioService().getUserList(response.accessToken,protectedResources.graphMe.endpoint )
+                        new UserService().getUserList(response.accessToken,protectedResources.graphMe.endpoint )
                                 .then(response => setGraphData(response));
                         }).catch(error => console.log(error));
                     }

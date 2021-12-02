@@ -3,7 +3,7 @@ import { MsalProvider } from "@azure/msal-react";
 import { PageLayout } from "./components/PageLayout";
 import { Profile } from "./components/Profile";
 //import { Hello } from "./pages/Hello";
-import {Hello} from "./pages/UsuarioPage";
+import {Hello} from "./pages/UsersPage";
 
 import "./styles/App.css";
 
