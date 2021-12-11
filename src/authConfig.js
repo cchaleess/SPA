@@ -56,7 +56,7 @@ export const protectedResources = {
         endpoint: "https://graph.microsoft.com/v1.0/me",
         scopes: ["User.Read"],
     },
-    apiHello: {
+    apiUsers: {
         endpoint: "https://localhost:44382/api/usuario",
         scopes: ["api://dc90d8cc-8ed1-4b93-8378-58e2282a35eb/access_as_user"], // e.g. api://xxxxxx/access_as_user
     },

@@ -4,8 +4,15 @@
 
 .data-area-div {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+td {
+  width: 100%;
+  display: block;
   text-align: left;
+  border: none;
+  padding: 1rem;
 }

@@ -44,15 +44,17 @@ const ProfileContent = () => {
 
 const ProfileData = (graphData) => {
     const tableRows = Object.entries(graphData).map((entry, index) => {
-        return (<tr key={index}>
-            <ul>
-                <li><b>CURRENT USER NAME:</b>{entry[1].displayName}</li>           
-                <li><b>ID:</b>{entry[1].id}</li>
-                <li><b>EMAIL:</b>{entry[1].mail}</li>
-                <li><b>PRINCIPAL USER:</b>{entry[1].userPrincipalName}</li>
-            </ul>
-            </tr>)
+        return (  
+            <tr key={index}>
+                    <td><li><b>CURRENT USER NAME:</b>{entry[1].displayName}</li></td>           
+                    <td><li><b>ID:</b>{entry[1].id}</li></td>
+                    <td><li><b>EMAIL:</b>{entry[1].mail}</li></td>
+                    <td><li><b>PRINCIPAL USER:</b>{entry[1].userPrincipalName}</li></td>
+            </tr>               
+            )        
     });
+    
+    
 
     return (
         <>
@@ -61,7 +63,7 @@ const ProfileData = (graphData) => {
             <p>Contents of the <strong>response</strong> is below:</p>
         </div>
         <div className="data-area-div">
-            <table>
+            <table >
                 <thead>
                 </thead>
                 <tbody>
